@@ -2,7 +2,7 @@ package com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("myCat")
 public class Cat implements Pet {
     
     public Cat(){

@@ -8,6 +8,11 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <context:component-scan base-package="com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction" />
+    <context:component-scan 
+        base-package="com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction" />
+    
+        <!--<context:property-placeholder location="classpath:myApp.properties" />-->
+        
+        
     
 </beans>

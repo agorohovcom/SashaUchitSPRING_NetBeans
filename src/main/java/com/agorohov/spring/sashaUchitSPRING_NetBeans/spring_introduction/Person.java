@@ -4,26 +4,37 @@
  */
 package com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction;
 
-/**
- *
- * @author agorohov
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
-private Pet pet;
+//    @Autowired
+//    @Qualifier("dog")
+    private Pet pet;
+//    @Value("Gorohov")
+//    @Value("${person.surname}")
     private String surname;
+//    @Value("33")
+//    @Value("${person.age}")
     private int age;
 
-//    public Person(Pet pet){
+    @Autowired
+    public Person(@Qualifier("dog") Pet pet){  
+        System.out.println("Person bean is created");
+        this.pet = pet;
+    }
+    
+//    public Person() {
 //        System.out.println("Person bean is created");
-//        this.pet = pet;
 //    }
 
-    public Person(){
-        System.out.println("Person bean is created");
-    }
-
-    // pet -> setPet
-    public void setPet(Pet pet){
+    // "pet -> setPet"
+//    @Autowired
+//    @Qualifier("dog")
+    public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;
     }
@@ -47,7 +58,7 @@ private Pet pet;
         this.age = age;
     }
 
-    public void callYourPet(){
+    public void callYourPet() {
         System.out.println("Hello, my lovely Pet!");
         pet.say();
     }

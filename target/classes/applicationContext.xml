@@ -10,11 +10,11 @@
     <context:property-placeholder location="classpath:myApp.properties" />
 
     <bean id = "myPet"
-          class = "com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction.Dog">
+          class = "com.agorohov.spring.spring_introduction.Dog">
     </bean>
 
     <bean id = "myPerson"
-          class = "com.agorohov.spring.sashaUchitSPRING_NetBeans.spring_introduction.Person">
+          class = "com.agorohov.spring.spring_introduction.Person">
 
 <!--        <constructor-arg ref = "myPet" />-->
 

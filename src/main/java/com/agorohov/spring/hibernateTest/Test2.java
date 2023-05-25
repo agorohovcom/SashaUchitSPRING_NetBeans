@@ -5,15 +5,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-public class Test1 {
+public class Test2 {
 
     public static void main(String[] args) {
-        // так не работает
-//        SessionFactory factory = new Configuration()
-//                .addResource("hibernate.cfg.xml")
-//                .addClass(Employee.class)
-//                .buildSessionFactory();
-        
         SessionFactory factory = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
@@ -22,17 +16,23 @@ public class Test1 {
         try {
             Session session = factory.getCurrentSession();
 
-//            Employee emp = new Employee("Zaur", "Tregulov", "IT", 500);
-//            Employee emp = new Employee("Sasha", "Gorohov", "furnFactory", 90);
-//            Employee emp = new Employee("Zinka", "Rezinka", "HR", 300);
-            Employee emp = new Employee("Aleksandr", "Ivanov", "IT", 600);
+            Employee emp = new Employee(
+                    "Elena", 
+                    "Petrova", 
+                    "Sales", 
+                    800);
 
-            
             session.beginTransaction();
             session.save(emp);
             session.getTransaction().commit();
             
-            System.out.println(emp);
+            int myId = emp.getId();
+            session = factory.getCurrentSession();
+            session.beginTransaction();
+            Employee empFromDB = (Employee) session.get(Employee.class, myId);
+            session.getTransaction().commit();
+            System.out.println(empFromDB);
+            
             System.out.println("Done! =)");
         } finally {
             factory.close();

@@ -17,22 +17,22 @@ public class Test2 {
             Session session = factory.getCurrentSession();
 
             Employee emp = new Employee(
-                    "Elena", 
-                    "Petrova", 
-                    "Sales", 
-                    800);
+                    "Anatoliy", 
+                    "Vassernam", 
+                    "HR", 
+                    100);
 
             session.beginTransaction();
             session.save(emp);
-            session.getTransaction().commit();
+//            session.getTransaction().commit();
             
             int myId = emp.getId();
-            session = factory.getCurrentSession();
-            session.beginTransaction();
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
             Employee empFromDB = (Employee) session.get(Employee.class, myId);
             session.getTransaction().commit();
             System.out.println(empFromDB);
-            
+
             System.out.println("Done! =)");
         } finally {
             factory.close();

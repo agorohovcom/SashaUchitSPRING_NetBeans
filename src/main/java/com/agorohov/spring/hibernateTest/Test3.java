@@ -1,6 +1,6 @@
 package com.agorohov.spring.hibernateTest;
 
-import com.agorohov.spring.hibernateTest.entity.Employee;
+import com.agorohov.spring.hibernateTest.entity.Employee1;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +11,7 @@ public class Test3 {
     public static void main(String[] args) {
         SessionFactory factory = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Employee1.class)
                 .buildSessionFactory();
 
         try {
@@ -29,11 +29,11 @@ public class Test3 {
 //                    .list();
             
             // получение всех работников из БД по имени Aleksandr с ЗП выше 500
-            List<Employee> emps = session
+            List<Employee1> emps = session
                     .createQuery("from Employee where name = 'Aleksandr' AND salary > 500")  // name - название поля в Employee
                     .list();
 
-            for (Employee e : emps) {
+            for (Employee1 e : emps) {
                 System.out.println(e);
             }
 

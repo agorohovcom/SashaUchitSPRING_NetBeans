@@ -1,6 +1,6 @@
 package com.agorohov.spring.hibernateTest;
 
-import com.agorohov.spring.hibernateTest.entity.Employee;
+import com.agorohov.spring.hibernateTest.entity.Employee1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -10,7 +10,7 @@ public class Test4_DELETE {
     public static void main(String[] args) {
         SessionFactory factory = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Employee1.class)
                 .buildSessionFactory();
 
         try {

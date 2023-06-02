@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-public class Test1 {
+public class Test1_OneToOneUniDirection {
 
     public static void main(String[] args) {
         SessionFactory factory = new AnnotationConfiguration()
@@ -65,6 +65,7 @@ public class Test1 {
 //            System.out.println("Done! =)");
             
             // пример 4
+            // получить объект оп id и удалить каскадом
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
 //            

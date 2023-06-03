@@ -18,15 +18,29 @@ public class Test1 {
         
         try {
             // пример 1
-            // добавление департамента и двух работников
+            // добавление департамента и 3 работников
 //            session = factory.getCurrentSession();
 //            
-//            Department dep = new Department("IT", 1200, 300);
-//            Employee emp1 = new Employee("Zaur", "Tregulov", 800);
-//            Employee emp2 = new Employee("Elena", "Smirnova", 1000);
-//            
+//            Department dep = new Department(
+//                    "Sales", 
+//                    1500, 
+//                    800);
+//            Employee emp1 = new Employee(
+//                    "Zaur", 
+//                    "Tregulov", 
+//                    800);
+//            Employee emp2 = new Employee(
+//                    "Elena", 
+//                    "Smirnova", 
+//                    1500);
+//            Employee emp3 = new Employee(
+//                    "Anton", 
+//                    "Sidorov", 
+//                    1200);
+//                       
 //            dep.addEmployeeToDepartment(emp1);
 //            dep.addEmployeeToDepartment(emp2);
+//            dep.addEmployeeToDepartment(emp3);
 //            
 //            session.beginTransaction();
 //            session.save(dep);
@@ -35,30 +49,45 @@ public class Test1 {
 //            System.out.println("Done! =)");
 
             // пример 2
-            // получить департамент по id и вывести в консоль департамент и его работников
-//            session = factory.getCurrentSession();
-//            session.beginTransaction();
-//            
-//            Department department = (Department) session.get(Department.class, 1);
-//            
-//            System.out.println(department);
-//            System.out.println(department.getEmps());
-//                    
-//            session.getTransaction().commit();
-//            System.out.println("Done! =)");
-
-            // пример 3
-            // получить работника по id, вывести на экран работника и его департамент
+            // получаем департамент и выводим работников
+            // тестируем fetch = FetchType.LAZY и .EAGER
             session = factory.getCurrentSession();
             session.beginTransaction();
             
-            Employee employee = (Employee) session.get(Employee.class, 3);
+            System.out.println("Get department");
+            Department department = (Department) session.get(Department.class, 4);
             
-            System.out.println(employee);
-            System.out.println(employee.getDepartment());
-                    
+            // если при типе загрузки "fetch = FetchType.LAZY)" запросить информацию
+            // о сотрудниках (из связанной таблицы) после ".commit", получим ошибку,
+            // так как сессия уже закрыта, а данные по связанным таблицам не загружены.
+            // Чтобы избежать ошибки, можем перед коммитом подгрузить данные.
+            // при использовании "fetch = FetchType.LAZY" всё будет норм и без подгрузки.
+            System.out.println("Подгрузим наших работников перед закрытием сессии");
+            department.getEmps().get(0);
+            
+            // закрываем сессию
             session.getTransaction().commit();
+            
+            System.out.println("Show department");
+            System.out.println(department);
+            System.out.println("Show deployees of the department");
+            System.out.println(department.getEmps());
+                    
+            
             System.out.println("Done! =)");
+
+            // пример 3
+            // получить работника по id, вывести на экран работника и его департамент
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
+//            
+//            Employee employee = (Employee) session.get(Employee.class, 3);
+//            
+//            System.out.println(employee);
+//            System.out.println(employee.getDepartment());
+//                    
+//            session.getTransaction().commit();
+//            System.out.println("Done! =)");
 
             // пример 4
             // === если cascade = CascadeType.ALL: ===

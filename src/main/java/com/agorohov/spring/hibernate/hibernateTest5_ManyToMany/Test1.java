@@ -17,6 +17,19 @@ public class Test1 {
         Session session = null;
         
         try{
+            session = factory.getCurrentSession();
+            
+            Section section1 = new Section("Boxing");
+            Child child1 = new Child("Sasha", 13);
+            
+            section1.addChildToSection(child1);
+            
+            session.beginTransaction();
+            
+            session.persist(section1);
+              
+            session.getTransaction().commit();
+            System.out.println("Done! =)");
             // 1
             // добавляем 1 секцию, троих детей и добавляем детей в секцию
 //            session = factory.getCurrentSession();
@@ -112,15 +125,15 @@ public class Test1 {
             
             // 6
             // удаляем ребенка по id
-            session = factory.getCurrentSession();
-
-            session.beginTransaction();
-            
-            Child child = (Child) session.get(Child.class, 5);
-            session.delete(child);
-            
-            session.getTransaction().commit();
-            System.out.println("Done! =)");
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//            
+//            Child child = (Child) session.get(Child.class, 5);
+//            session.delete(child);
+//            
+//            session.getTransaction().commit();
+//            System.out.println("Done! =)");
             // ********************************************
         }finally{
             if(session.isOpen()){

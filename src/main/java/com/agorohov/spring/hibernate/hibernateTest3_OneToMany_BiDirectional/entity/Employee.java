@@ -1,6 +1,5 @@
-package com.agorohov.spring.hibernateTest3_OneToMany_BiDirectional.entity;
+package com.agorohov.spring.hibernate.hibernateTest3_OneToMany_BiDirectional.entity;
 
-import com.agorohov.spring.hibernateTest3_OneToMany_BiDirectional.*;
 import javax.persistence.*;
 
 @Entity

@@ -1,6 +1,6 @@
-package com.agorohov.spring.hibernateTest1;
+package com.agorohov.spring.hibernate.hibernateTest1;
 
-import com.agorohov.spring.hibernateTest1.entity.Employee;
+import com.agorohov.spring.hibernate.hibernateTest1.entity.Employee;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

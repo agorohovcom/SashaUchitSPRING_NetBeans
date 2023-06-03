@@ -1,6 +1,7 @@
-package com.agorohov.spring.hibernateTest4_OneToMany_UniDirectional;
+package com.agorohov.spring.hibernate.hibernateTest4_OneToMany_UniDirectional;
 
-import com.agorohov.spring.hibernateTest4_OneToMany_UniDirectional.entity.*;
+import com.agorohov.spring.hibernate.hibernateTest4_OneToMany_UniDirectional.entity.Department;
+import com.agorohov.spring.hibernate.hibernateTest4_OneToMany_UniDirectional.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

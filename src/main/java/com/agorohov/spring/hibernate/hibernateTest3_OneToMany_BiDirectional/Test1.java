@@ -1,6 +1,7 @@
-package com.agorohov.spring.hibernateTest3_OneToMany_BiDirectional;
+package com.agorohov.spring.hibernate.hibernateTest3_OneToMany_BiDirectional;
 
-import com.agorohov.spring.hibernateTest3_OneToMany_BiDirectional.entity.*;
+import com.agorohov.spring.hibernate.hibernateTest3_OneToMany_BiDirectional.entity.Department;
+import com.agorohov.spring.hibernate.hibernateTest3_OneToMany_BiDirectional.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

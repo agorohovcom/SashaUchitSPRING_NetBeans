@@ -1,4 +1,4 @@
-package com.agorohov.spring.hibernateTest4_OneToMany_UniDirectional.entity;
+package com.agorohov.spring.hibernate.hibernateTest4_OneToMany_UniDirectional.entity;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.agorohov.spring.hibernateTest;
+package com.agorohov.spring.hibernateTest1;
 
-import com.agorohov.spring.hibernateTest.entity.Employee1;
+import com.agorohov.spring.hibernateTest1.entity.Employee;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +11,7 @@ public class Test4_UPDATE {
     public static void main(String[] args) {
         SessionFactory factory = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee1.class)
+                .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
 
         try {

@@ -1,6 +1,6 @@
-package com.agorohov.spring.hibernateTest;
+package com.agorohov.spring.hibernateTest1;
 
-import com.agorohov.spring.hibernateTest.entity.Employee1;
+import com.agorohov.spring.hibernateTest1.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
@@ -10,13 +10,13 @@ public class Test2 {
     public static void main(String[] args) {
         SessionFactory factory = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Employee1.class)
+                .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
 
         try {
             Session session = factory.getCurrentSession();
 
-            Employee1 emp = new Employee1(
+            Employee emp = new Employee(
                     "Anatoliy", 
                     "Vassernam", 
                     "HR", 
@@ -29,7 +29,7 @@ public class Test2 {
             int myId = emp.getId();
 //            session = factory.getCurrentSession();
 //            session.beginTransaction();
-            Employee1 empFromDB = (Employee1) session.get(Employee1.class, myId);
+            Employee empFromDB = (Employee) session.get(Employee.class, myId);
             session.getTransaction().commit();
             System.out.println(empFromDB);
 

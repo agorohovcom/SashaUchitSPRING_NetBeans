@@ -1,6 +1,11 @@
-package com.agorohov.spring.hibernateTest2.entity;
+package com.agorohov.spring.hibernateTest1.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "employees")
@@ -21,10 +26,6 @@ public class Employee {
     
     @Column(name="salary")
     private int salary;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "details_id")
-    private Detail empDetail;
 
     public Employee() {
     }
@@ -41,14 +42,6 @@ public class Employee {
         return "Employee{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", department=" + department + ", salary=" + salary + '}';
     }
 
-    public Detail getEmpDetail() {
-        return empDetail;
-    }
-
-    public void setEmpDetail(Detail empDetail) {
-        this.empDetail = empDetail;
-    }
-    
     public int getId() {
         return id;
     }

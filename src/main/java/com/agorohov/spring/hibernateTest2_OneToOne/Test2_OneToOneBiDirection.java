@@ -1,7 +1,7 @@
-package com.agorohov.spring.hibernateTest2;
+package com.agorohov.spring.hibernateTest2_OneToOne;
 
-import com.agorohov.spring.hibernateTest2.entity.Detail;
-import com.agorohov.spring.hibernateTest2.entity.Employee;
+import com.agorohov.spring.hibernateTest2_OneToOne.entity.Detail;
+import com.agorohov.spring.hibernateTest2_OneToOne.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;

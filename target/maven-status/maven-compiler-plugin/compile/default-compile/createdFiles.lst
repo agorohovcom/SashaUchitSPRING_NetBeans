@@ -3,8 +3,11 @@ com/agorohov/spring/hibernateTest1/entity/Employee.class
 com/agorohov/spring/hibernateTest2_OneToOne/Test1_OneToOneUniDirection.class
 com/agorohov/spring/hibernateTest1/Test3.class
 com/agorohov/spring/hibernateTest4_OneToMany_UniDirectional/entity/Department.class
+com/agorohov/spring/hibernateTest5_ManyToMany/entity/Section.class
 com/agorohov/spring/hibernateTest2_OneToOne/entity/Detail.class
 com/agorohov/spring/hibernateTest1/Test2.class
+com/agorohov/spring/hibernateTest5_ManyToMany/Test1.class
+com/agorohov/spring/hibernateTest5_ManyToMany/entity/Child.class
 com/agorohov/spring/hibernateTest2_OneToOne/Test2_OneToOneBiDirection.class
 com/agorohov/spring/hibernateTest3_OneToMany_BiDirectional/entity/Department.class
 com/agorohov/spring/hibernateTest1/Test1.class
